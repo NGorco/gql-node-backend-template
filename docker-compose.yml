@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  redis:
+    image: 'docker.io/bitnami/redis:6.0-debian-10'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - REDIS_DISABLE_COMMANDS=FLUSHDB,FLUSHALL
+    ports:
+      - '6379:6379'
+    volumes:
+      - 'redis_data:/bitnami/redis/data'
+
+  postgres:
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '${DB_PORT}:5432'
+    image: postgres:14.3
+    command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c max_connections=200
+    restart: always
+    environment:
+      POSTGRES_USER: '${DB_USER}'
+      POSTGRES_DB: '${DB_NAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  redis_data:
+    driver: local
+  postgres:
+    driver: local

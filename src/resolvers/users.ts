@@ -1,4 +1,4 @@
-import { knexDb } from "../database/connection";
+import { knexDb } from "../../database/connection";
 import { BasicResolver } from "./basicResolver";
 
 class UsersResolverBuilder extends BasicResolver {
@@ -15,8 +15,7 @@ class UsersResolverBuilder extends BasicResolver {
 
   _qGetUser = `getUser: User!`;
   async getUser() {
-    return (await knexDb('users')
-      .where('user_id', 1))[0];
+    return (await knexDb("users").where("user_id", 1))[0];
   }
 }
 
@@ -24,7 +23,7 @@ const Resolver = new UsersResolverBuilder();
 
 export const UsersDefs = {
   resolvers: {
-    getUser: Resolver.getUser
+    getUser: Resolver.getUser,
   },
-  schemas: Resolver.getShemas(Resolver)
+  schemas: Resolver.getShemas(Resolver),
 };

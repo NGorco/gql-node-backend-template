@@ -1,0 +1,30 @@
+{
+  "env": {
+    "node": true,
+    "jest": true,
+    "es2022": true
+  },
+  "extends": ["airbnb-base", "prettier", "plugin:@typescript-eslint/recommended"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "lines-between-class-members": 0,
+    "class-methods-use-this": 0,
+    "@typescript-eslint/no-var-requires": 0,
+    "no-useless-constructor": 0,
+    "no-await-in-loop": 0,
+    "guard-for-in": 0,
+    "no-plusplus": 0,
+    "no-restricted-syntax": 0,
+    "camelcase": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "@typescript-eslint/no-unused-vars": 2,
+    "no-console": 1,
+    "no-restricted-globals": 0,
+    "no-else-return": 0
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "sourceMaps": true,
+  "inlineSourcesContent": true,
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "tsx": false,
+      "decorators": true,
+      "dynamicImport": true,
+      "exportDefaultFrom": true
+    },
+    "target": "es5",
+    "baseUrl": "./",
+    "transform": {
+      "legacyDecorator": true,
+      "decoratorMetadata": true
+    },
+    "keepClassNames": true
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}

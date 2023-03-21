@@ -1,5 +1,5 @@
 import knex, { Knex } from "knex";
-import { Config } from "../config";
+import { Config } from "./config";
 
 let cachedConnection: Knex;
 

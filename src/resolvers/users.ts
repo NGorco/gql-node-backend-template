@@ -1,4 +1,4 @@
-import { knexDb } from "../../database/connection";
+import { knexDb } from "../connection";
 import { BasicResolver } from "./basicResolver";
 
 class UsersResolverBuilder extends BasicResolver {

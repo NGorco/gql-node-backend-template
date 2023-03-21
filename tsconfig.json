@@ -5,7 +5,6 @@
     "removeComments": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": false,
     "esModuleInterop": true,
     "target": "es2022",
     "sourceMap": false,
